@@ -17,7 +17,7 @@ dotenv.config()
 
 connectCloudinary()
 app.use(cors({
-    origin: 'https://tg-puce-six.vercel.app',
+    origin: '*',
     credentials: true
 }))
 app.use(express.json())
