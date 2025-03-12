@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL:  'http://localhost:1120/api',
+    baseURL:  'https://telegrambackend-sand.vercel.app/api',
     withCredentials: true
 })
