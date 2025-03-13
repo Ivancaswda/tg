@@ -7,7 +7,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
     cors: {
-        origin: ['https://tg-puce-six.vercel.app'],
+        origin: ['http://localhost:2020', 'https://tg-puce-six.vercel.app'],
         methods: ["GET", "POST", "PUT"],
         credentials: true
     }
