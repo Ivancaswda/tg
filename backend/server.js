@@ -19,32 +19,12 @@ connectCloudinary()
 app.use(cors({
     origin: 'https://tg-puce-six.vercel.app', // Укажи конкретный фронтенд-URL
     credentials: true, // Включает поддержку кук и заголовков авторизации))
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+
 }))
 
 
-app.use((req, res, next) => {
-    const allowedOrigins = ['https://tg-puce-six.vercel.app'];
-    const origin = req.headers.origin;
-
-    if (allowedOrigins.includes(origin)) {
-        res.header('Access-Control-Allow-Origin', origin);
-    }
-
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
-    next();
-});
 
 
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Credentials', 'true');
-    next();
-});
 
 app.use(express.json())
 app.use(cookieParser())
