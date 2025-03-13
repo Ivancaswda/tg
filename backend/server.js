@@ -20,6 +20,12 @@ app.use(cors({
     origin: 'https://tg-puce-six.vercel.app', // Укажи конкретный фронтенд-URL
     credentials: true // Включает поддержку кук и заголовков авторизации))
 }))
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
+});
+
 app.use(express.json())
 app.use(cookieParser())
 app.use('/api/user', userRouter)
