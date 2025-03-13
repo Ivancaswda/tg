@@ -17,7 +17,7 @@ dotenv.config()
 
 connectCloudinary()
 app.use(cors({
-    origin: 'https://tg-puce-six.vercel.app', // Укажи конкретный фронтенд-URL
+    origin: origin: ['http://localhost:2020', 'https://tg-puce-six.vercel.app'], // Укажи конкретный фронтенд-URL
     credentials: true, // Включает поддержку кук и заголовков авторизации))
 
 }))
