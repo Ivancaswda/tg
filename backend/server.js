@@ -16,7 +16,10 @@ const PORT = process.env.PORT || 1120
 dotenv.config()
 
 connectCloudinary()
-app.use(cors())
+app.use(cors({
+    origin: 'https://tg-puce-six.vercel.app', // Укажи конкретный фронтенд-URL
+    credentials: true // Включает поддержку кук и заголовков авторизации))
+}))
 app.use(express.json())
 app.use(cookieParser())
 app.use('/api/user', userRouter)
